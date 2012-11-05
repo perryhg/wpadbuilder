@@ -1,0 +1,5 @@
+    var pxy_excep = '10.9.0.1:3128';
+    if(shExpMatch(url, "http://www.python.org/download*"))
+    {
+        return pxy_excep;
+    }
