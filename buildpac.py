@@ -1,4 +1,5 @@
 import sys
+import os
 
 def build():
     temprule = ""
@@ -54,8 +55,8 @@ var isInNet = function (){
 """
     testfun = """var assert = require('assert');
 assert.equal("DIRECT",FindProxyForURL('http://t.cn', 't.cn'));
-assert.equal("PROXY 10.9.0.1:3128",FindProxyForURL('http://www.youtube.com', 'www.youtube.com'));
-"""
+assert.equal("%s",FindProxyForURL('http://www.youtube.com', 'www.youtube.com'));
+""" % os.environ['TESTPXY']
 
     fh = open('wpad.dat', 'w')
     fh.write(tempfun)
